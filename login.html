@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<link rel="stylesheet" type="text/css" href="style_login.css">
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script> 
+	<script>
+	    $(document).ready(function() {
+	        function disableBack() { window.history.forward() }
+
+	        window.onload = disableBack();
+	        window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+	    });
+	</script>
+	
+</head>
+<body>
+	
+	
+	<center>
+		<br>
+		<br><br><br>
+		<div><h2>Login Here......</h2></div>
+	<!-- Login Here!!! -->
+	<div class="main-agile" >
+		<div class="content-wthree">
+	<form id="login-form" action="login" method="post">
+		<!-- <h2>Login Here</h2> -->
+		<table >
+			<tr>
+				
+				<!-- <td><span></span>   </td> -->
+				<td class="inputs-w3ls">
+					<input type="text" name="username" placeholder="User Name" required>
+				</td>
+			</tr>
+			<tr>
+				<td class="inputs-w3ls">
+					<input type="password" name="password" placeholder="Password" required>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><input type="submit" value="signin"></td><br>
+			</tr>
+			<tr>
+				<td><a href="register1.html"><span>New User</span></a></td>
+			</tr>
+		</table>
+	</form>
+	</div>
+	</div>
+		<div class="footer-w3l">
+	</div>
+
+
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyDyChW4HTuOXHCRIXaO4XWaZ6rlbOvYTsM",
+			authDomain: "online-movie-ticket-book-455a1.firebaseapp.com",
+			databaseURL: "https://online-movie-ticket-book-455a1.firebaseio.com",
+			projectId: "online-movie-ticket-book-455a1",
+			storageBucket: "online-movie-ticket-book-455a1.appspot.com",
+			messagingSenderId: "437196644716",
+			appId: "1:437196644716:web:d8fc053ef22a7b1c2c1349",
+			measurementId: "G-NE00G6L1YR"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+		const db = firebase.firestore();
+		db.settings({ timestampsInSnapshots: true})
+	</script>
+	<script src="js/app.js"></script>
+</body>
+<script>
+	window.location.hash="no-back-button";
+	window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+	window.onhashchange=function(){window.location.hash="no-back-button";}
+</script>
+</html>
